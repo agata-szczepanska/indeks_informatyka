@@ -1,0 +1,18 @@
+def szukaj(a, x):
+    "Funkcja ktora zwraca indeks elemeentu x w danje liscie lub '-1' gdy nie ma danefgo elementu na liscie"
+    lewy = 0
+    prawy = len(a) - 1
+
+    while lewy<=prawy:
+        srodek=(lewy+prawy)//2
+        if a[srodek]==x:
+            return srodek
+        if a[srodek]<x:
+            lewy = srodek +1
+        else:
+            prawy = srodek-1
+    return -1 #jak szukanego x nie ma na liscie
+
+a = [3,5,17,43,56,78,98]
+for x in(5, 20, 17, 60, 56, 78):
+    print(f"x={x} -> index {szukaj(a, x)}")
